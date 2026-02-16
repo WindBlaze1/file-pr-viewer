@@ -1,71 +1,41 @@
-# file-pr-viewer README
+# file-pr-viewer
 
-This is the README for your extension "file-pr-viewer". After writing up a brief description, we recommend including the following sections.
+A VS Code extension that lists GitHub pull requests that touched the currently active file. View them in a panel and open links directly to GitHub.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Panel view**: Shows a "File PR Viewer" panel in the bottom panel area
+- **Auto-refresh**: Updates when you switch to a different file
+- **GitHub auth**: Uses VS Code's built-in GitHub sign-in (no token setup required)
+- **PR links**: Click any PR to open it on GitHub
+- **PR details**: Shows number, title, state, author, and merge date
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- VS Code 1.109.0 or later
+- Git repository with a GitHub remote (`origin`)
+- GitHub account (for authentication)
+
+## How to use
+
+1. Open a file in a Git repo that has `origin` pointing to GitHub
+2. Open the panel (View > Output, or use the panel tab bar) and select **"File PR Viewer"** / **"PRs for File"**
+3. Sign in to GitHub when prompted (first use)
+4. PRs that modified the current file appear in the list
+5. Click a PR to open it in your browser
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+This extension does not add any configurable settings.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Only works with GitHub remotes. GitLab, Bitbucket, etc. are not supported.
+- PR detection is limited to the last 25 commits for the file (performance).
+- Requires the commit to be associated with a PR via GitHub's API (e.g. squash merges may not always link correctly).
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release. Shows GitHub PRs that touched the active file in a panel view.
