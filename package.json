@@ -3,6 +3,14 @@
   "publisher": "WindBlaze1",
   "displayName": "file-pr-viewer",
   "description": "Lists GitHub PRs that touched the currently active file",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WindBlaze1/file-pr-viewer"
+  },
+  "bugs": {
+    "url": "https://github.com/WindBlaze1/file-pr-viewer/issues"
+  },
+  "homepage": "https://github.com/WindBlaze1/file-pr-viewer#readme",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.109.0"
